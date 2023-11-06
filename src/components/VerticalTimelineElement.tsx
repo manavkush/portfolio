@@ -32,6 +32,7 @@ const TimeLineElement = ({ experience }: { experience: TimeLineElementProps }) =
         }}
       >
         <h3 className='font-semibold capitalize'>{experience.title}</h3>
+        <h4 className='font-medium'>{experience.company}</h4>
         <p className='font-normal !mt-0'>{experience.location}</p>
         <p className='!mt-1 !font-normal text-gray-700'>{experience.description}</p>
       </VerticalTimelineElement>

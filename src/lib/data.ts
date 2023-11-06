@@ -34,28 +34,40 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Bachelor's Degree",
+    company: "IIT Dharwad",
+    location: "Dharwad, India",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Graduated with a degree in Computer Science and Engineering.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2019 - 2023",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Full Stack Developer Intern",
+    company: "Creatosaurus",
+    location: "Pune, India (Remote)",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "Implemented a full stack webapp which increased incoming traffic to the domain by implementing integrations with various social media sites like Facebook, Twitter, Instagram.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "June - August 2021",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Houston, TX",
+    title: "Software Engineering Intern",
+    company: "Emids Technologies",
+    location: "Bangalore, India (Remote)",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
-    icon: React.createElement(FaReact),
-    date: "2021 - present",
+      "Analyzed and worked with Azure FHIR Server, Apache Airflow for the client which allowed converting healthcare data through a pipeline removing the manual work.",
+    icon: React.createElement(CgWorkAlt),
+    date: "May - July 2022",
+  },
+  {
+    title: "Software Engineer",
+    company: "Amuse Labs",
+    location: "Bangalore, India",
+    description:
+      "Analyzed and improved execution times for multiple database operations single-handedly. Resulted in a 20% decrease in turnaround time which in turn led to better user experience.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Jan 2023 - present",
   },
 ] as const;
 
@@ -63,15 +75,15 @@ export const projectsData = [
   {
     title: "Slapdash",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
+      "A realtime chat application which allows users to create multiple groups and chat with their friends.",
     tags: ["React", "Next.js", "WebSockets", "MySQL", "Tailwind", "Prisma"],
     imageUrl: slapdash,
   },
   {
     title: "Libmanage",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
+      "A library management app that me and my friends built for our college library. It allows issueing, returning, checking their status and also allows the librarian to manage the books.",
+    tags: ["React", "NodeJs", "Express", "MongoDB"],
     imageUrl: libmanage,
   },
   // {
