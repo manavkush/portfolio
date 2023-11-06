@@ -1,10 +1,14 @@
 "use client"
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { links } from '@/src/lib/data'
 import Link from 'next/link'
+import clsx from 'clsx'
+import { useActiveSectionContext } from '../context/active-section-context'
 
 const Header = () => {
+  const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext()
+
   return (
     <header className='z-[999] relative'>
       <motion.div className="fixed top-0 left-1/2 h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full"
@@ -20,8 +24,20 @@ const Header = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
               >
-                <Link href={link.hash} className='flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition'>
+                <Link href={link.hash} 
+                  className={clsx('flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition relative', {
+                    "text-gray-950": activeSection === link.name,
+                  })}
+                  onClick={() => {
+                    setActiveSection(link.name)
+                    setTimeOfLastClick(Date.now())
+                  }}
+                >
                   {link.name}
+                  {link.name === activeSection && <motion.span 
+                    layoutId='activeSection'
+                    transition={{ type: "spring", damping:30, stiffness: 380 }}
+                    className='bg-gray-100 rounded-full absolute inset-0 -z-10'/>}
                 </Link>
               </motion.li>
             ))

@@ -15,16 +15,16 @@ export const links = [
     hash: "#about",
   },
   {
+    name: "Experience",
+    hash: "#experience",
+  },
+  {
     name: "Projects",
     hash: "#projects",
   },
   {
     name: "Skills",
     hash: "#skills",
-  },
-  {
-    name: "Experience",
-    hash: "#experience",
   },
   {
     name: "Contact",
@@ -61,14 +61,14 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Slapdash",
     description:
       "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+    tags: ["React", "Next.js", "WebSockets", "MySQL", "Tailwind", "Prisma"],
     imageUrl: slapdash,
   },
   {
-    title: "rmtDev",
+    title: "Libmanage",
     description:
       "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
@@ -84,23 +84,17 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
   "Node.js",
+  "Java",
   "Git",
-  "Tailwind",
+  "SQL",
   "Prisma",
   "MongoDB",
   "Redux",
-  "GraphQL",
-  "Apollo",
   "Express",
-  "PostgreSQL",
   "Python",
-  "Django",
-  "Framer Motion",
+  "Tailwind",
 ] as const;
