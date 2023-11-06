@@ -6,10 +6,13 @@ import { useSetActiveSection } from '../lib/hooks'
 import { motion } from 'framer-motion'
 import { sendMail } from '../lib/actions'
 import { useFormStatus } from 'react-dom'
+import FormSubmitButton from './SubmitButton'
+import { toast } from 'react-toastify'
+import { stringifyError } from 'next/dist/shared/lib/utils'
 
 const Contact = () => {
   const ref = useSetActiveSection('Contact')
-  const {pending} = useFormStatus()
+  const { pending } = useFormStatus()
 
   return (
     <motion.section ref={ref} id="contact"
@@ -28,28 +31,42 @@ const Contact = () => {
         or through this form.
       </p>
 
-      <form action={sendMail} className='mt-10 flex flex-col'>
+      <form className='mt-10 flex flex-col'
+        action={async (formData) => {
+          console.log("1Data:")
+          console.log("1Error: ")
+
+          const response = await sendMail(formData);
+
+          if (response.error) {
+            toast.error('Error in sending mail.', {
+              position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, 
+              pauseOnHover: true, draggable: true, progress: undefined, theme: "light",
+            });
+            return;
+          }
+
+          console.log("Toast success")
+          toast.success("Mail sent successfully", {
+              position: "top-right", autoClose: 5000, hideProgressBar: false, closeOnClick: true, 
+              pauseOnHover: true, draggable: true, progress: undefined, theme: "light",
+          })
+        }}
+      >
         <input type='email'
           name='senderEmail'
           className='h-14 rounded-lg borderBlack px-4'
-          placeholder='Your email' 
+          placeholder='Your email'
           required
           maxLength={500}
         />
-        <textarea 
+        <textarea
           name='message'
-          className='h-52 my-3 rounded-lg borderBlack p-4' 
-          placeholder='Your message' 
+          className='h-52 my-3 rounded-lg borderBlack p-4'
+          placeholder='Your message'
           required
         />
-        <button type='submit' className='h-[3rem] w-[8rem] 
-          bg-gray-900 text-white rounded-full 
-          outline-none transition-all 
-          flex items-center justify-center gap-2
-          group hover:scale-110 focus:scale-110 active:scale-105 hover:bg-gray-950
-          '>
-          Submit <FaPaperPlane className="text-xs opacity-60 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
-        </button>
+        <FormSubmitButton />
       </form>
 
     </motion.section>

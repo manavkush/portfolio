@@ -6,8 +6,6 @@ import { validateString } from "./utils"
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function sendMail(formData: FormData) {
-  console.log(formData.get('senderEmail'))
-  console.log(formData.get('message'))
 
   const senderEmail = formData.get('senderEmail')
   const message = formData.get('message')
@@ -19,9 +17,9 @@ export async function sendMail(formData: FormData) {
     }
   }
 
+  let data;
   try {
-
-    await resend.emails.send({
+    data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "manavkush@gmail.com",
       subject: "New message from portfolio",
@@ -30,5 +28,10 @@ export async function sendMail(formData: FormData) {
     })
   } catch(error) {
     console.error(error)
+    return {
+      error: error,
+    }
   }
+  console.log(data)
+  return data
 }
