@@ -60,7 +60,7 @@ const Intro = () => {
           Contact me here<BsArrowRight className='opacity-70' />
         </Link>
 
-        <a className='bg-white px-7 py-3 flex items-center rounded-full shadow-md outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all cursor-pointer' href='/ManavK_Resume_SDE.pdf' download>Download Resume <HiDownload className="opacity-60 translation" /></a>
+        <a className='bg-white px-7 py-3 flex items-center rounded-full shadow-md outline-none focus:scale-110 hover:scale-110 active:scale-105 transition-all cursor-pointer' href='/ManavK_Resume_SWE.pdf' download>Download Resume <HiDownload className="opacity-60 translation" /></a>
 
         <a className='bg-white px-7 py-3 text-gray-700 flex items-center rounded-full shadow-md focus:scale-110 hover:text-gray-950 hover:scale-[1.15] active:scale-105 transition-all cursor-pointer' href='https://www.linkedin.com/in/manav-kushwaha/' target='_blank'><BsLinkedin /></a>
 
