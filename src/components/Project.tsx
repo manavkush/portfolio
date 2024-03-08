@@ -5,12 +5,8 @@ type ProjectProps = typeof projectsData[number]
 
 const Project = (props: ProjectProps) => {
   return (
-    <div className='group relative flex max-w-[45rem] 
-      bg-gray-100 border border-black/5 
-      sm:pr-8 overflow-hidden mb:3 sm:mb-8 last:mb-0 even:pl-8
-      hover:bg-gray-200 transition-all'
-    >
-      <div className='flex flex-col project-data py-4 px-5 sm:pt-10 sm:w-1/2 sm:h-[20rem] group-even:ml-[22rem]'>
+    <section className='group relative flex max-w-[45rem] bg-gray-100 border border-black/5 sm:pr-8 overflow-hidden mb:3 sm:mb-8 last:mb-0 even:pl-8 hover:bg-gray-200 transition-all'>
+        <div className='pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]'>
         <h3 className='font-semibold text-2xl'>{props.title}</h3>
         <p className='leading-relaxed mt-2 text-gray-700'>
           {props.description}
@@ -40,7 +36,7 @@ const Project = (props: ProjectProps) => {
 
         transition
         ' />
-    </div>
+    </section>
 
   )
 }

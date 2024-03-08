@@ -19,6 +19,10 @@ export const links = [
     hash: "#experience",
   },
   {
+    name: "Blogs",
+    hash: "#blogs",
+  },
+  {
     name: "Projects",
     hash: "#projects",
   },
@@ -31,6 +35,25 @@ export const links = [
     hash: "#contact",
   },
 ] as const;
+
+export const blogsData = [
+  {
+    title: "Learning Microservices with Go. Part 5: Asynchronous Communication (Kafka)",
+    url: "dev.to/manavkush/learning-microservices-with-gopart-5-asynchronous-communication-kafka-54fh",
+  },
+  {
+    title: "Learning Microservices with Go. Part 4: Sync Communication (gRPC)",
+    url: "dev.to/manavkush/learning-microservices-with-gopart-4-grpc-synchronous-communication-4hm4",
+  },
+  {
+    title: "Learning Microservices with Go. Part 3: Serialization",
+    url: "dev.to/manavkush/learning-microservices-with-gopart-3-serialization-5di1"
+  },
+  {
+    title: "Learning Microservices with Go. Part 2: Service Discovery",
+    url: "dev.to/manavkush/learning-microservices-with-gopart-2-service-discovery-168g"
+  }
+]
 
 export const experiencesData = [
   {
