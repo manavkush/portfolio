@@ -39,7 +39,7 @@ const Intro = () => {
       >
         <span className='text font-bold'>Hey, I&apos;m Manav.</span> I&apos;m a <b>Software engineer</b> and I&apos;ve been programming for 5 years.
         <span> I love learning new things.
-          <br />Currently exploring and learning <b>Golang</b></span>
+          <br />Currently diving deep into <b>Distributed Systems</b></span>
       </motion.h1>
 
       {/* Contact Me Area*/}
